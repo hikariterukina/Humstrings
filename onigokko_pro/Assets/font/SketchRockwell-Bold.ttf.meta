@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 0496b83f310a40e49985a27a1f4deb5e
+timeCreated: 1517384676
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sketch Rockwell
+  fontNames:
+  - Sketch Rockwell
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
