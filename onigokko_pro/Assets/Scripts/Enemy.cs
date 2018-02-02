@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         float turn = Random.Range(0, 2);
+        float turn3 = Random.Range(0, 3);
         if (other.gameObject.tag == "EnemyM")
         {
             
@@ -42,6 +43,27 @@ public class Enemy : MonoBehaviour {
             {
                 Debug.Log("１や！");
                 rotationY -= 90f;
+                gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
+            }
+        }
+        if(other.gameObject.tag == "EnemyM3")
+        {
+            if (turn3 == 0)
+            {
+                Debug.Log("0や！");
+                rotationY += 90f;
+                gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
+            }
+            else if (turn3 == 1)
+            {
+                Debug.Log("１や！");
+                rotationY -= 90f;
+                gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
+            }
+            else if(turn3 == 2)
+            {
+                Debug.Log("2や！");
+                rotationY += 0f;
                 gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
             }
         }
