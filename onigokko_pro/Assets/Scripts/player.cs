@@ -89,14 +89,16 @@ public class player : MonoBehaviour {
                             if(swipeDir == Vector2.left)
                             {
                                 Debug.Log("左決まった！");
-                                rotateY -= 90;
-                                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 90 * RotationSpeed);
+                                StartCoroutine(Leftoon());
+                                /*rotateY -= 90;
+                                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 15 * RotationSpeed);*/
                             }
                             else if(swipeDir == Vector2.right)
                             {
                                 Debug.Log("右決まった！");
-                                rotateY += 90;
-                                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 90 * RotationSpeed);
+                                StartCoroutine(Rightoon());
+                                //rotateY += 90;
+                                //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 15 * RotationSpeed);
                             }
                         }
                     }else
@@ -140,9 +142,10 @@ public class player : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            rotateY += 90;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 90 * RotationSpeed);
+            /*rotateY += 90;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 90 * RotationSpeed);*/
             //transform.rotation = Quaternion.Euler(0,rotateY, 0);
+            StartCoroutine(Rightoon());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -188,6 +191,24 @@ public class player : MonoBehaviour {
         if (collision.gameObject.tag == "Enemy" )
         {
             Destroy(collision.gameObject);
+        }
+    }
+    IEnumerator Rightoon()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            rotateY += 18;
+            transform.rotation = Quaternion.Euler(0, rotateY, 0);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
+    IEnumerator Leftoon()
+    {
+        for(int i = 0; i < 5; i++)
+        {
+            rotateY -= 18;
+            transform.rotation = Quaternion.Euler(0, rotateY, 0);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
