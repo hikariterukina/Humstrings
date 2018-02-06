@@ -443,7 +443,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 476513635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94, y: 167.5, z: 0}
+  m_LocalPosition: {x: 113, y: 201, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1823555964}
@@ -520,8 +520,16 @@ MonoBehaviour:
   Player: {fileID: 1457806005257524, guid: 054853382bd5873449acf73f1a5c122c, type: 2}
   speed: 0.1
   rotateY: 0
-  RotationSpeed: 10
+  RotationSpeed: 0.001
   time: 0
+  widthReference: 1
+  validWidth: 0.25
+  timeout: 0.5
+  OnSwipe:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: player+SwipeHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!54 &650575536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -599,6 +607,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &775247979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 775247980}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &775247980
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775247979}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.67, y: 0.99, z: 4.26}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &822678659
 Prefab:
   m_ObjectHideFlags: 0
@@ -668,7 +704,7 @@ Prefab:
     - target: {fileID: 114360818382030978, guid: 529a691439c82c24c9d528a4e657f968,
         type: 2}
       propertyPath: speed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 54441993306604712, guid: 529a691439c82c24c9d528a4e657f968,
         type: 2}
@@ -736,17 +772,22 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114542223560056186, guid: 054853382bd5873449acf73f1a5c122c,
+        type: 2}
+      propertyPath: OnSwipe.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4487308693426994, guid: 054853382bd5873449acf73f1a5c122c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -163.46
+      value: -161.8
       objectReference: {fileID: 0}
     - target: {fileID: 4487308693426994, guid: 054853382bd5873449acf73f1a5c122c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 4487308693426994, guid: 054853382bd5873449acf73f1a5c122c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -133.6
+      value: -81.5
       objectReference: {fileID: 0}
     - target: {fileID: 4487308693426994, guid: 054853382bd5873449acf73f1a5c122c, type: 2}
       propertyPath: m_LocalRotation.x
@@ -781,6 +822,32 @@ Prefab:
         type: 2}
       propertyPath: m_Center.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542223560056186, guid: 054853382bd5873449acf73f1a5c122c,
+        type: 2}
+      propertyPath: OnSwipe.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542223560056186, guid: 054853382bd5873449acf73f1a5c122c,
+        type: 2}
+      propertyPath: OnSwipe.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542223560056186, guid: 054853382bd5873449acf73f1a5c122c,
+        type: 2}
+      propertyPath: OnSwipe.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 42be6c2f08bde094cbdaffade2188b63,
+        type: 3}
+    - target: {fileID: 114542223560056186, guid: 054853382bd5873449acf73f1a5c122c,
+        type: 2}
+      propertyPath: OnSwipe.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542223560056186, guid: 054853382bd5873449acf73f1a5c122c,
+        type: 2}
+      propertyPath: OnSwipe.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 054853382bd5873449acf73f1a5c122c, type: 2}
@@ -1139,7 +1206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95c9b00579fb264f94600526196f9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 12
+  time: 40
 --- !u!1001 &1969975215
 Prefab:
   m_ObjectHideFlags: 0
