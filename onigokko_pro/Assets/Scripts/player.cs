@@ -6,8 +6,9 @@ using UnityEngine.Events;
 
 public class player : MonoBehaviour {
     public GameObject Player;
+    //public GameObject Speedup;
     public float speed = 10;
-    public float rotateY = 0;
+    private float rotateY = 0;
     public float RotationSpeed = 1f;
     public float time;
     private Animator anim;
@@ -89,16 +90,12 @@ public class player : MonoBehaviour {
                             if(swipeDir == Vector2.left)
                             {
                                 Debug.Log("左決まった！");
-                                StartCoroutine(Leftoon());
-                                /*rotateY -= 90;
-                                transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 15 * RotationSpeed);*/
+                                StartCoroutine(Leftoon());    
                             }
                             else if(swipeDir == Vector2.right)
                             {
                                 Debug.Log("右決まった！");
                                 StartCoroutine(Rightoon());
-                                //rotateY += 90;
-                                //transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 15 * RotationSpeed);
                             }
                         }
                     }else
@@ -114,7 +111,7 @@ public class player : MonoBehaviour {
                                 c = false;
                             }
                             else if(swipeDir == Vector2.up)
-                            {
+                            { 
                                 speed += 2;
                                 Debug.Log("加速！！！");
                             }
@@ -142,20 +139,16 @@ public class player : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            /*rotateY += 90;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0), 90 * RotationSpeed);*/
-            //transform.rotation = Quaternion.Euler(0,rotateY, 0);
             StartCoroutine(Rightoon());
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-           
-            rotateY -= 90;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, rotateY, 0),  90 * RotationSpeed);
-            //transform.rotation = Quaternion.Euler(0, rotateY, 0);  
+        
+            StartCoroutine(Leftoon());
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            
             speed += 2;
         }
 
@@ -199,8 +192,10 @@ public class player : MonoBehaviour {
         {
             rotateY += 18;
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.0001f);
         }
+        StopCoroutine(Rightoon());
+
     }
     IEnumerator Leftoon()
     {
@@ -208,7 +203,9 @@ public class player : MonoBehaviour {
         {
             rotateY -= 18;
             transform.rotation = Quaternion.Euler(0, rotateY, 0);
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.0001f);
         }
+        StopCoroutine(Leftoon());
+
     }
 }
