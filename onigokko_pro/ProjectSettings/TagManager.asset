@@ -10,6 +10,8 @@ TagManager:
   - EnemyM
   - EnemyL
   - EnemyM3
+  - EnemyML
+  - EnemyS
   layers:
   - Default
   - TransparentFX

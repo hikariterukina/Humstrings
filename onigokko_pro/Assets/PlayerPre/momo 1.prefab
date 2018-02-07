@@ -2681,9 +2681,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1457806005257524}
   speed: 10
-  rotateY: 0
   RotationSpeed: 10
   time: 0
+  Dush: {fileID: 1150328657273022, guid: 50b8ad24650825947b90b13b450ad596, type: 2}
+  widthReference: 1
+  validWidth: 0.25
+  timeout: 0.5
+  OnSwipe:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: player+SwipeHandler, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!124 &124639603479073470
 Behaviour:
   m_ObjectHideFlags: 1

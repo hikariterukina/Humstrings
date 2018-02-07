@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour {
     {
         float turn = Random.Range(0, 2);
         float turn3 = Random.Range(0, 3);
+        float turnML = Random.Range(0, 2);
         if (other.gameObject.tag == "EnemyM")
         {
             
@@ -67,6 +68,19 @@ public class Enemy : MonoBehaviour {
                 gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
             }
         }
+        if(other.gameObject.tag == "EnemyML")
+        {
+            if(turnML == 0)
+            {
+                rotationY -= 90f;
+                gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
+            }
+            else if(turnML == 1)
+            {
+                speed += 1;
+            }
+        }
+
         else if(other.gameObject.tag == "EnemyR")
         {
             rotationY += 90f;
@@ -80,6 +94,10 @@ public class Enemy : MonoBehaviour {
             Debug.Log("あたってるよ");
             transform.rotation = Quaternion.Euler(0, rotationY, 0);
 
+        }
+        else if (other.gameObject.tag == "EnemyS")
+        {
+            speed += 1;
         }
 
     }

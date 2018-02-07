@@ -13,6 +13,7 @@ public class player : MonoBehaviour {
     public float time;
     private Animator anim;
     private bool c = true;
+    public GameObject Dush;
 
     //タッチテスト↓
     public bool widthReference = true;
@@ -109,11 +110,14 @@ public class player : MonoBehaviour {
                                 anim.SetTrigger("get");
                                 time = 0;
                                 c = false;
+                                speed = 10;
+                               
                             }
                             else if(swipeDir == Vector2.up)
                             { 
                                 speed += 2;
                                 Debug.Log("加速！！！");
+                                Instantiate(Dush, new Vector3(100, -205, 125), Quaternion.identity);
                             }
                         }
                     }
@@ -148,7 +152,7 @@ public class player : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            
+            Instantiate(Dush, new Vector3(100, -205, 125), Quaternion.identity);
             speed += 2;
         }
 
@@ -173,6 +177,7 @@ public class player : MonoBehaviour {
             anim.SetTrigger("get");
             time = 0;
             c = false;
+            speed = 10;
         }
         
 
