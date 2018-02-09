@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 114542223560056186}
   m_Layer: 0
   m_Name: momo 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2684,6 +2684,7 @@ MonoBehaviour:
   RotationSpeed: 10
   time: 0
   Dush: {fileID: 1150328657273022, guid: 50b8ad24650825947b90b13b450ad596, type: 2}
+  SpeedDown: {fileID: 1882264720303852, guid: c7876436edf135547a2eb5770105162d, type: 2}
   widthReference: 1
   validWidth: 0.25
   timeout: 0.5

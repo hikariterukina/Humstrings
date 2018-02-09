@@ -1,8 +1,9 @@
-﻿using System;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class player : MonoBehaviour {
     public GameObject Player;
@@ -14,6 +15,8 @@ public class player : MonoBehaviour {
     private Animator anim;
     private bool c = true;
     public GameObject Dush;
+    public GameObject SpeedDown;
+    private GameObject _child;
 
     //タッチテスト↓
     public bool widthReference = true;
@@ -56,8 +59,8 @@ public class player : MonoBehaviour {
 
 	
 	// Update is called once per frame
-	void Update () { 
-        
+	void Update () {
+
         transform.position += transform.forward * speed * Time.deltaTime * 2;
         swipeDir = Vector2.zero; //１フレームごとにタッチをリセット
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITYIOS) //
@@ -110,13 +113,16 @@ public class player : MonoBehaviour {
                                 anim.SetTrigger("get");
                                 time = 0;
                                 c = false;
-                                speed = 10;
-                               
+                                speed = 15;
+                                Instantiate(SpeedDown, new Vector3(100, -205, 125), Quaternion.identity);
+                                Instantiate(SpeedDown, new Vector3(100, -205, 125), Quaternion.identity);
+
                             }
                             else if(swipeDir == Vector2.up)
                             { 
                                 speed += 2;
                                 Debug.Log("加速！！！");
+                                Instantiate(Dush, new Vector3(100, -205, 125), Quaternion.identity);
                                 Instantiate(Dush, new Vector3(100, -205, 125), Quaternion.identity);
                             }
                         }
@@ -153,6 +159,7 @@ public class player : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Instantiate(Dush, new Vector3(100, -205, 125), Quaternion.identity);
+            Instantiate(Dush, new Vector3(100, -205, 125), Quaternion.identity);
             speed += 2;
         }
 
@@ -177,7 +184,9 @@ public class player : MonoBehaviour {
             anim.SetTrigger("get");
             time = 0;
             c = false;
-            speed = 10;
+            speed = 15;
+            Instantiate(SpeedDown, new Vector3(100, -205, 125), Quaternion.identity);
+            Instantiate(SpeedDown, new Vector3(100, -205, 125), Quaternion.identity);
         }
         
 
