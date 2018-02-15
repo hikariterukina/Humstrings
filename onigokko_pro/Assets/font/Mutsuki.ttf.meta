@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3050fc1ac498dca4ba523ed76aae13e2
+timeCreated: 1518590973
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mutsuki
+  fontNames:
+  - Mutsuki
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

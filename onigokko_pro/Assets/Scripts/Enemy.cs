@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
    
     private float rotationY = 0;
     public float speed = 1;
+    public int EnemyLife = 1;
     
   
 
@@ -100,6 +102,21 @@ public class Enemy : MonoBehaviour {
             speed += 1;
         }
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            EnemyLife -= 1;
+            if(EnemyLife == 0)
+            {
+                Invoke("result", 2.0f);
+            }
+        }
+    }
+    void result()
+    {
+        SceneManager.LoadScene("Result");
     }
 
 }

@@ -12,6 +12,7 @@ TagManager:
   - EnemyM3
   - EnemyML
   - EnemyS
+  - PT
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,8 @@ public class TimeController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         time -= Time.deltaTime;
-        GetComponent<Text>().text = time.ToString("F0");
+        GetComponent<Text>().text = time.ToString("F");
+
         if (time < 0)
         {
             enabled = false;

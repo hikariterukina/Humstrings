@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: b0dd966d6ea5bbb4e91c4c3d37ebf1de
+timeCreated: 1518589299
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: sweet heavy calligraphy
+  fontNames:
+  - sweet heavy calligraphy
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
