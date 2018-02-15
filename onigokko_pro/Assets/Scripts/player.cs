@@ -48,6 +48,8 @@ public class player : MonoBehaviour {
     }
 
 
+    
+
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
@@ -62,6 +64,7 @@ public class player : MonoBehaviour {
         
 
         transform.position += transform.forward * speed * Time.deltaTime * 2;
+        //transform.Translate(0, 0, speed * Time.deltaTime);
         swipeDir = Vector2.zero; //１フレームごとにタッチをリセット
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITYIOS) //
         if(Input.touchCount == 1) 
