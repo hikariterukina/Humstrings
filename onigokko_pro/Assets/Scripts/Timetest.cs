@@ -21,11 +21,12 @@ public class Timetest : MonoBehaviour {
         totalTime = minute * 60 + seconds;
         oldSeconds = 0f;
         timerText = GetComponentInChildren<Text>();
+        
     }
 
     void Update()
     {
-        timercount++;
+        
         //　制限時間が0秒以下ならresult
         if (totalTime <= 0f)
         {
@@ -52,6 +53,7 @@ public class Timetest : MonoBehaviour {
         }
         
     }
+   
     void SceneM()
     {
         SceneManager.LoadScene("Result");

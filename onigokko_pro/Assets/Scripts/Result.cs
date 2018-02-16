@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Result : MonoBehaviour {
-    private static float totalTime;
-    private float resultTime;
-    public int minute;
-    public float seconds;
-    private static float oldSeconds;
-    private Text resulttext;
+    public int resultcount;
+    private int tc;
 
     // Use this for initialization
     void Start () {
+
+        tc = Timetest.timercount;
 
     }
 	
