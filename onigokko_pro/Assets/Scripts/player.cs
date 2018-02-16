@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour {
     public GameObject Player;
@@ -16,6 +17,9 @@ public class player : MonoBehaviour {
     private bool c = true;
     public GameObject Dush;
     public GameObject SpeedDown;
+    private bool a ;
+
+
 
     //タッチテスト↓
     public bool widthReference = true;
@@ -52,8 +56,10 @@ public class player : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         anim = GetComponent<Animator>();
         speed = 10;
+
         
     }
 
@@ -184,19 +190,30 @@ public class player : MonoBehaviour {
         if (c == false)
         {
             time += Time.deltaTime;
+            
             if (time >= 2)
             {
                 c = true;
             }
         }
+        if (a == true)
+        {
+            time += Time.deltaTime;
+            if(time >= 3)
+            {
+                a = false;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.DownArrow) && c == true)
         {
+            a = true;
             anim.SetTrigger("get");
             time = 0;
             c = false;
             speed = 15;
             Instantiate(SpeedDown, new Vector3(100, -495, 125), Quaternion.identity);
             Instantiate(SpeedDown, new Vector3(100, -495, 125), Quaternion.identity);
+            
         }
         
 
@@ -205,9 +222,12 @@ public class player : MonoBehaviour {
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy" )
+        if (collision.gameObject.tag == "Enemy" && a)
         {
+            Debug.Log("ハゲ死ね");
             Destroy(collision.gameObject);
+            Invoke("Scene", 2f);
+            enabled = false;
         }
     }
     IEnumerator Rightoon()
@@ -231,5 +251,10 @@ public class player : MonoBehaviour {
         }
         StopCoroutine(Leftoon());
 
+    }
+    void Scene()
+    {
+        
+        SceneManager.LoadScene("Result");
     }
 }

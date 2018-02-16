@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timetest : MonoBehaviour {
     //　トータル制限時間
-    private float totalTime;
+    private static float totalTime;
     //　制限時間（分）
-    public int minute;
+    public  int minute;
     //　制限時間（秒）
     public float seconds;
     //　前回Update時の秒数
-    private float oldSeconds;
+    private static float oldSeconds;
     private Text timerText;
+    public static int timercount; 
 
     void Start()
     {
@@ -23,7 +25,8 @@ public class Timetest : MonoBehaviour {
 
     void Update()
     {
-        //　制限時間が0秒以下なら何もしない
+        timercount++;
+        //　制限時間が0秒以下ならresult
         if (totalTime <= 0f)
         {
             return;
@@ -45,7 +48,12 @@ public class Timetest : MonoBehaviour {
         //　制限時間以下になったらコンソールに『制限時間終了』という文字列を表示する
         if (totalTime <= 0f)
         {
-            Debug.Log("制限時間終了");
+            Invoke("SceneM", 0.7f);
         }
+        
+    }
+    void SceneM()
+    {
+        SceneManager.LoadScene("Result");
     }
 }

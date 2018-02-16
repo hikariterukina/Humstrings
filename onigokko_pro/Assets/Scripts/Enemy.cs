@@ -7,13 +7,12 @@ public class Enemy : MonoBehaviour {
    
     private float rotationY = 0;
     public float speed = 1;
-    public int EnemyLife = 1;
+
     
   
 
     // Use this for initialization
     void Start () {
-
     }
 	
 	// Update is called once per frame
@@ -103,20 +102,7 @@ public class Enemy : MonoBehaviour {
         }
 
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            EnemyLife -= 1;
-            if(EnemyLife == 0)
-            {
-                Invoke("result", 2.0f);
-            }
-        }
-    }
-    void result()
-    {
-        SceneManager.LoadScene("Result");
-    }
 
+
+    
 }

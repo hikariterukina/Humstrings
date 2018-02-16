@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/f019e2bebd477f0429564f70c1ae80c3
-    guid: f019e2bebd477f0429564f70c1ae80c3
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 9ae4d83ce3a32e14c9163da961025e4d
@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/Scenes/StageSelect.unity
     guid: cb96b7a6a8829df4da1277ae2180c773
   - enabled: 1
-    path: Assets/Scenes/Main1.unity
-    guid: 723eec977c9dc404daa66d80505cea46
-  - enabled: 1
     path: Assets/Scenes/Description.unity
     guid: f860aabb6db3f7341a597bf38b03e892
+  - enabled: 1
+    path: Assets/Scenes/Main1.unity
+    guid: 723eec977c9dc404daa66d80505cea46
   - enabled: 1
     path: Assets/Scenes/Main2.unity
     guid: 2c4dabc29f2a1f543a60597312d1726b
