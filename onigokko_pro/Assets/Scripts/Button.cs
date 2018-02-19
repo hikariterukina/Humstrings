@@ -15,7 +15,7 @@ public class Button : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnClick()
+    public void OnClick()
     {
         SceneManager.LoadScene("Title");
     }

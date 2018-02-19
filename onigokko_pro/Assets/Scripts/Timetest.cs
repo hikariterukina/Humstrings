@@ -28,10 +28,8 @@ public class Timetest : MonoBehaviour {
     void Update()
     {
         if (timercount)
-        {
-            
+        {  
             resultcount += Time.deltaTime;
-            Debug.Log(resultcount);
         }
         //　制限時間が0秒以下なら
         if (totalTime <= 0f)
