@@ -12,22 +12,28 @@ public class Timetest : MonoBehaviour {
     //　制限時間（秒）
     public float seconds;
     //　前回Update時の秒数
-    private static float oldSeconds;
+    public static float oldSeconds;
     private Text timerText;
-    public static int timercount; 
-
+    public static bool timercount;
+    public static float resultcount;
     void Start()
     {
         totalTime = minute * 60 + seconds;
         oldSeconds = 0f;
         timerText = GetComponentInChildren<Text>();
+        timercount = true;
         
     }
 
     void Update()
     {
-        
-        //　制限時間が0秒以下ならresult
+        if (timercount)
+        {
+            
+            resultcount += Time.deltaTime;
+            Debug.Log(resultcount);
+        }
+        //　制限時間が0秒以下なら
         if (totalTime <= 0f)
         {
             return;
@@ -46,9 +52,10 @@ public class Timetest : MonoBehaviour {
             timerText.text = minute.ToString("0") + "分" + ((int)seconds).ToString("00") + "秒";
         }
         oldSeconds = seconds;
-        //　制限時間以下になったらコンソールに『制限時間終了』という文字列を表示する
+        //　制限時間たったらシーン移動する
         if (totalTime <= 0f)
         {
+            timercount = false;
             Invoke("SceneM", 0.7f);
         }
         

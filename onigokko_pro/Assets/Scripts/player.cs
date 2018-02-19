@@ -18,6 +18,7 @@ public class player : MonoBehaviour {
     public GameObject Dush;
     public GameObject SpeedDown;
     private bool a ;
+    private Timetest timercount;
 
 
 
@@ -224,10 +225,11 @@ public class player : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Enemy" && a)
         {
-            Debug.Log("ハゲ死ね");
+            
             Destroy(collision.gameObject);
             Invoke("Scene", 2f);
             enabled = false;
+            Timetest.timercount = false;
         }
     }
     IEnumerator Rightoon()
