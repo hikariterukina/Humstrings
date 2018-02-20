@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 153274307}
   - component: {fileID: 153274306}
   m_Layer: 5
-  m_Name: "\u64CD\u4F5C\u8AAC\u660E"
+  m_Name: Deprication
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 218225530}
   - component: {fileID: 218225532}
   m_Layer: 0
-  m_Name: "\u969C\u5B50"
+  m_Name: Fusuma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 524187959}
   - component: {fileID: 524187960}
   m_Layer: 5
-  m_Name: "\u58F1"
+  m_Name: One
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 996493035}
   - component: {fileID: 996493039}
   m_Layer: 5
-  m_Name: "\u53C2"
+  m_Name: Three
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1083,7 +1083,7 @@ RectTransform:
   m_GameObject: {fileID: 1106972764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7}
-  m_LocalScale: {x: 0.028011205, y: 0.028011205, z: 0.028011205}
+  m_LocalScale: {x: 0.028653296, y: 0.028653296, z: 0.028653296}
   m_Children:
   - {fileID: 524187955}
   - {fileID: 1733985521}
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 1670500953}
   - component: {fileID: 1670500952}
   m_Layer: 0
-  m_Name: "\u3075\u3059\u307E\u30FB\u958B\u3051\u308B01 (1)"
+  m_Name: FusumaBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,7 +1656,7 @@ GameObject:
   - component: {fileID: 1733985522}
   - component: {fileID: 1733985526}
   m_Layer: 5
-  m_Name: "\u5F10"
+  m_Name: Two
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1823,7 +1823,7 @@ GameObject:
   - component: {fileID: 1851795897}
   - component: {fileID: 1851795896}
   m_Layer: 0
-  m_Name: "\u30B9\u30C8\u30FC\u30EA\u30FC\u5019\u88DC\uFF11 (1)"
+  m_Name: StoryBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

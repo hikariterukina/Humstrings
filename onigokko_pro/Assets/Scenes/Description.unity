@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 152262412}
   - component: {fileID: 152262411}
   m_Layer: 0
-  m_Name: "\u969C\u5B50"
+  m_Name: Fusuma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,7 +588,7 @@ RectTransform:
   m_GameObject: {fileID: 482277329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7}
-  m_LocalScale: {x: 0.028011205, y: 0.028011205, z: 0.028011205}
+  m_LocalScale: {x: 0.028653296, y: 0.028653296, z: 0.028653296}
   m_Children:
   - {fileID: 1473134114}
   - {fileID: 76478022}
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 1144397636}
   - component: {fileID: 1144397635}
   m_Layer: 0
-  m_Name: "\u30BF\u30A4\u30C8\u30EB\u5019\u88DC\uFF11 (1)"
+  m_Name: TitleBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 1344630000}
   - component: {fileID: 1344629999}
   m_Layer: 0
-  m_Name: "\u3075\u3059\u307E\u30FB\u958B\u3051\u308B01 (1)"
+  m_Name: FusumaOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1131,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1155,7 +1155,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!4 &1344630000
 Transform:
   m_ObjectHideFlags: 0

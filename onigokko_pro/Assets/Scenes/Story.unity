@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 739781044}
   - component: {fileID: 739781043}
   m_Layer: 0
-  m_Name: "\u3075\u3059\u307E\u30FB\u958B\u3051\u308B01 (1)"
+  m_Name: Fusuma_close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 951851587}
   - component: {fileID: 951851586}
   m_Layer: 0
-  m_Name: "\u969C\u5B50"
+  m_Name: husuma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +690,7 @@ GameObject:
   - component: {fileID: 1213549434}
   - component: {fileID: 1213549433}
   m_Layer: 5
-  m_Name: "\u9032"
+  m_Name: Skip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 1302096966}
   - component: {fileID: 1302096967}
   m_Layer: 5
-  m_Name: "\u958B\u59CB"
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1396,7 +1396,7 @@ GameObject:
   - component: {fileID: 2079565529}
   - component: {fileID: 2079565528}
   m_Layer: 0
-  m_Name: "\u30B9\u30C8\u30FC\u30EA\u30FC\u5019\u88DC\uFF11 (1)"
+  m_Name: StoryBGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
