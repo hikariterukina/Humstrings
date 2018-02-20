@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class ExampleClass : MonoBehaviour {
 	public AudioClip impact;
-	AudioSource audio;
+    new AudioSource audio;
     Button btn;
      
 
