@@ -2,15 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 public class Result : MonoBehaviour {
     private int resultime;
     private Timetest resultcount;
     public Text resulttext;
+    public AudioSource Voice1;
+    public AudioSource Voice2;
+    public AudioSource Voice3;
+    public AudioSource Voicelose;
+    private bool Voi;
 
 
     // Use this for initialization
     void Start () {
+        if (Voi == true)
+        {
+            float Voice = Random.Range(0, 3);
+            if (Voice == 0)
+            {
+                Debug.Log("a");
+                Voice1.Play();
+            }
+            else if (Voice == 1)
+            {
+                Debug.Log("b");
+                Voice2.Play();
+            }
+            else if (Voice == 2)
+            {
+                Debug.Log("c");
+                Voice3.Play();
+            }
+        }
+        if(Timetest.resultcount >= 120)
+        {
+            Voi = false;
+            Voicelose.Play();
+        }
+
         resulttext = GetComponentInChildren<Text>();
         int M = (int)Timetest.resultcount/60;
         int S = (int)Timetest.resultcount % 60;
