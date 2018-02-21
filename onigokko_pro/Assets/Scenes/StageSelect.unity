@@ -139,7 +139,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 153274304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -260, z: 0}
+  m_LocalPosition: {x: 114, y: -168, z: 0}
   m_LocalScale: {x: 0.95000005, y: 1.1010932, z: 1}
   m_Children:
   - {fileID: 1601881356}
@@ -148,8 +148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -260}
-  m_SizeDelta: {x: 160, y: 60}
+  m_AnchoredPosition: {x: 114, y: -168}
+  m_SizeDelta: {x: 140.17, y: 52.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &153274306
 MonoBehaviour:
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenespeed: 1
+  SB: {fileID: 715941014}
 --- !u!114 &153274307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenespeed: 1
+  SB: {fileID: 715941014}
 --- !u!114 &524187960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +608,53 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &715941013
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.8013644
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.75072426
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.09414533
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839343268192058, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: dc26e21236f801b46a686e6cb62e408f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!82 &715941014 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82243664804360382, guid: dc26e21236f801b46a686e6cb62e408f,
+    type: 2}
+  m_PrefabInternal: {fileID: 715941013}
 --- !u!1 &954335828
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,6 +929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenespeed: 1
+  SB: {fileID: 715941014}
 --- !u!114 &996493036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,7 +1133,7 @@ RectTransform:
   m_GameObject: {fileID: 1106972764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7}
-  m_LocalScale: {x: 0.028653296, y: 0.028653296, z: 0.028653296}
+  m_LocalScale: {x: 0.028011205, y: 0.028011205, z: 0.028011205}
   m_Children:
   - {fileID: 524187955}
   - {fileID: 1733985521}
@@ -1420,7 +1470,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1633299150}
   - component: {fileID: 1633299149}
-  - component: {fileID: 1633299148}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -1428,18 +1477,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1633299148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1633299147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ac8a119668a6147a84d65cb01f2b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impact: {fileID: 8300000, guid: 4e7ab88b1717e084495bd46afc777440, type: 3}
 --- !u!82 &1633299149
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1693,6 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenespeed: 1
+  SB: {fileID: 715941014}
 --- !u!114 &1733985523
 MonoBehaviour:
   m_ObjectHideFlags: 0

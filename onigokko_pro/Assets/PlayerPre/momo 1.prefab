@@ -2685,6 +2685,8 @@ MonoBehaviour:
   time: 0
   Dush: {fileID: 1150328657273022, guid: 50b8ad24650825947b90b13b450ad596, type: 2}
   SpeedDown: {fileID: 1882264720303852, guid: c7876436edf135547a2eb5770105162d, type: 2}
+  Attack: {fileID: 82985690731781968, guid: 9e87c01af70812147ae64e97764c6ed7, type: 2}
+  speedup: {fileID: 82509548867364846, guid: d3b561e7c73a8d34884735dea7eb67fe, type: 2}
   widthReference: 1
   validWidth: 0.25
   timeout: 0.5

@@ -13,9 +13,10 @@ public class CountDown : MonoBehaviour
     public GameObject Rtime;
     private player P;
     private Timetest TT;
+    public GameObject Pausebutton;
 
 
-    void Start()
+    void Awake()
     {
         StartCoroutine(CountdownCoroutine());
         _textCountdown.text = "";
@@ -23,6 +24,8 @@ public class CountDown : MonoBehaviour
         TT = Rtime.GetComponent<Timetest>();
         P.enabled = false;
         TT.enabled = false;
+        Pausebutton.SetActive(false);
+
     }
 
     void Update()
@@ -61,7 +64,7 @@ public class CountDown : MonoBehaviour
         _textCountdown.gameObject.SetActive(false);
         P.enabled = true;
         TT.enabled = true;
-
+        Pausebutton.SetActive(true);
         
 
         // Use this for initialization

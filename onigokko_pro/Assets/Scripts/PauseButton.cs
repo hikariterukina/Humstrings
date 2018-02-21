@@ -7,11 +7,21 @@ public class PauseButton : MonoBehaviour {
     public GameObject Resume;
     public GameObject TitleGo;
     public GameObject Pause;
+    public GameObject Player;
+    public GameObject Enemy;
+    private Animator PlayerAnim;
+    private Animator EnemyAnim;
+    public AudioSource Psound;
+    public AudioSource Rsound;
+    public AudioSource Tsound;
+    
 
 	// Use this for initialization
 	void Start () {
         Resume.SetActive(false);
         TitleGo.SetActive(false);
+        PlayerAnim = Player.GetComponent<Animator>();
+        EnemyAnim = Enemy.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -20,19 +30,26 @@ public class PauseButton : MonoBehaviour {
 	}
     public void Pclick()
     {
-        Time.timeScale = 0;
+        Psound.Play();
         Resume.SetActive(true);
         TitleGo.SetActive(true);
         Pause.SetActive(false);
+        player.Posing = true;
     }
     public void ResumeClick()
     {
-        Time.timeScale = 1;
+        Rsound.Play();
         Resume.SetActive(false);
         TitleGo.SetActive(false);
         Pause.SetActive(true);
+        player.Posing = false;
     }
     public void TitleGoClick()
+    {
+        Tsound.Play();
+        Invoke("Scene", 0.5f);
+    }
+    void Scene()
     {
         SceneManager.LoadScene("Title");
     }

@@ -27,36 +27,38 @@ public class Timetest : MonoBehaviour {
 
     void Update()
     {
-        if (timercount)
-        {  
-            resultcount += Time.deltaTime;
-        }
-        //　制限時間が0秒以下なら
-        if (totalTime <= 0f)
+        if (player.Posing == false)
         {
-            return;
-        }
-        //　一旦トータルの制限時間を計測；
-        totalTime = minute * 60 + seconds;
-        totalTime -= Time.deltaTime;
+            if (timercount)
+            {
+                resultcount += Time.deltaTime;
+            }
+            //　制限時間が0秒以下なら
+            if (totalTime <= 0f)
+            {
+                return;
+            }
+            //　一旦トータルの制限時間を計測；
+            totalTime = minute * 60 + seconds;
+            totalTime -= Time.deltaTime;
 
-        //　再設定
-        minute = (int)totalTime / 60;
-        seconds = totalTime - minute * 60;
+            //　再設定
+            minute = (int)totalTime / 60;
+            seconds = totalTime - minute * 60;
 
-        //　タイマー表示用UIテキストに時間を表示する
-        if ((int)seconds != (int)oldSeconds)
-        {
-            timerText.text = minute.ToString("0") + "分" + ((int)seconds).ToString("00") + "秒";
+            //　タイマー表示用UIテキストに時間を表示する
+            if ((int)seconds != (int)oldSeconds)
+            {
+                timerText.text = minute.ToString("0") + "分" + ((int)seconds).ToString("00") + "秒";
+            }
+            oldSeconds = seconds;
+            //　制限時間たったらシーン移動する
+            if (totalTime <= 0f)
+            {
+                timercount = false;
+                Invoke("SceneM", 0.7f);
+            }
         }
-        oldSeconds = seconds;
-        //　制限時間たったらシーン移動する
-        if (totalTime <= 0f)
-        {
-            timercount = false;
-            Invoke("SceneM", 0.7f);
-        }
-        
     }
    
     void SceneM()

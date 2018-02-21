@@ -7,6 +7,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour {
+    public static bool Posing;
     public GameObject Player;
     //public GameObject Speedup;
     public float speed = 10;
@@ -19,6 +20,8 @@ public class player : MonoBehaviour {
     public GameObject SpeedDown;
     private bool a ;
     private Timetest timercount;
+    public AudioSource Attack;
+    public AudioSource speedup;
 
 
 
@@ -46,7 +49,7 @@ public class player : MonoBehaviour {
 
     public SwipeHandler OnSwipe;
 
-    //アプリを中断した時とかにはリセットする
+    //アプリを中断した時とかにはリセットする(たっちをね）
      void OnEnable()
     {
         pressing = false;
@@ -60,7 +63,7 @@ public class player : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         speed = 10;
-
+        Posing = false;
         
     }
 
@@ -68,84 +71,93 @@ public class player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
 
-        transform.position += transform.forward * speed * Time.deltaTime * 2;
-        //transform.Translate(0, 0, speed * Time.deltaTime);
-        swipeDir = Vector2.zero; //１フレームごとにタッチをリセット
+        if (Posing == false)
+        {
+            this.gameObject.GetComponent<Animator>().enabled = true;
+            transform.position += transform.forward * speed * Time.deltaTime * 2;
+            swipeDir = Vector2.zero; //１フレームごとにタッチをリセット
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITYIOS) //
         if(Input.touchCount == 1) 
 #endif
-        {
-            if(!pressing && Input.GetMouseButtonDown(0))
             {
-                pressing = true;
-                startPos = Input.mousePosition;
-                limiTime = Time.time + timeout;
-            }
-            else if(pressing && Input.GetMouseButtonUp(0))
-            {
-                pressing = false;
-                if(Time.time < limiTime)
+                if (!pressing && Input.GetMouseButtonDown(0))
                 {
-                    endPos = Input.mousePosition;
-
-                    Vector2 dist = endPos - startPos;
-                    float dx = Mathf.Abs(dist.x);
-                    float dy = Mathf.Abs(dist.y);
-                    float requiredPX = widthReference ? Screen.width * validWidth : Screen.height * validWidth;
-
-                    if(dy < dx)
+                    pressing = true;
+                    startPos = Input.mousePosition;
+                    limiTime = Time.time + timeout;
+                }
+                else if (pressing && Input.GetMouseButtonUp(0))
+                {
+                    pressing = false;
+                    if (Time.time < limiTime)
                     {
-                        if(requiredPX < dx)
+                        endPos = Input.mousePosition;
+
+                        Vector2 dist = endPos - startPos;
+                        float dx = Mathf.Abs(dist.x);
+                        float dy = Mathf.Abs(dist.y);
+                        float requiredPX = widthReference ? Screen.width * validWidth : Screen.height * validWidth;
+
+                        if (dy < dx)
                         {
-                            
-                            swipeDir = Mathf.Sign(dist.x) < 0 ? Vector2.left : Vector2.right;
-                            if(swipeDir == Vector2.left)
+                            if (requiredPX < dx)
                             {
-                                Debug.Log("左決まった！");
-                                StartCoroutine(Leftoon());    
-                            }
-                            else if(swipeDir == Vector2.right)
-                            {
-                                Debug.Log("右決まった！");
-                                StartCoroutine(Rightoon());
+
+                                swipeDir = Mathf.Sign(dist.x) < 0 ? Vector2.left : Vector2.right;
+                                if (swipeDir == Vector2.left)
+                                {
+                                    Debug.Log("左決まった！");
+                                    StartCoroutine(Leftoon());
+                                }
+                                else if (swipeDir == Vector2.right)
+                                {
+                                    Debug.Log("右決まった！");
+                                    StartCoroutine(Rightoon());
+                                }
                             }
                         }
-                    }else
-                    {
-                        if(requiredPX < dy)
+                        else
                         {
-                            swipeDir = Mathf.Sign(dist.y) < 0 ? Vector2.down : Vector2.up;
-                            if(swipeDir == Vector2.down)
+                            if (requiredPX < dy)
                             {
-                                Debug.Log("捕まえるんやで");
-                                anim.SetTrigger("get");
-                                time = 0;
-                                c = false;
-                                speed = 15;
-                                Instantiate(SpeedDown, new Vector3(100, -495, 125), Quaternion.identity);
-                                Instantiate(SpeedDown, new Vector3(100, -495, 125), Quaternion.identity);
+                                swipeDir = Mathf.Sign(dist.y) < 0 ? Vector2.down : Vector2.up;
+                                if (swipeDir == Vector2.down)
+                                {
+                                    Attack.Play();
+                                    Debug.Log("捕まえるんやで");
+                                    anim.SetTrigger("get");
+                                    time = 0;
+                                    c = false;
+                                    speed = 15;
+                                    Instantiate(SpeedDown, new Vector3(100, -495, 125), Quaternion.identity);
+                                    Instantiate(SpeedDown, new Vector3(100, -495, 125), Quaternion.identity);
 
-                            }
-                            else if(swipeDir == Vector2.up)
-                            { 
-                                speed += 2;
-                                Debug.Log("加速！！！");
-                                Instantiate(Dush, new Vector3(100, -495, 125), Quaternion.identity);
-                                Instantiate(Dush, new Vector3(100, -495, 125), Quaternion.identity);
+                                }
+                                else if (swipeDir == Vector2.up)
+                                {
+                                    speedup.Play();
+                                    speed += 2;
+                                    Debug.Log("加速！！！");
+                                    Instantiate(Dush, new Vector3(100, -495, 125), Quaternion.identity);
+                                    Instantiate(Dush, new Vector3(100, -495, 125), Quaternion.identity);
+                                }
                             }
                         }
-                    }
-                    if(swipeDir != Vector2.zero)
-                    {
-                        if(OnSwipe != null)
+                        if (swipeDir != Vector2.zero)
                         {
-                            OnSwipe.Invoke(swipeDir);
+                            if (OnSwipe != null)
+                            {
+                                OnSwipe.Invoke(swipeDir);
+                            }
                         }
                     }
                 }
             }
+        }
+        else
+        {
+            this.gameObject.GetComponent<Animator>().enabled = false;
         }
 #if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
         else
@@ -168,6 +180,7 @@ public class player : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            speedup.Play();
             Instantiate(Dush, new Vector3(100, -495, 125), Quaternion.identity);
             Instantiate(Dush, new Vector3(100, -495, 125), Quaternion.identity);
             speed += 2;
@@ -207,6 +220,7 @@ public class player : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && c == true)
         {
+            Attack.Play();
             a = true;
             anim.SetTrigger("get");
             time = 0;
@@ -221,12 +235,12 @@ public class player : MonoBehaviour {
 
 
     }
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Enemy" && a)
+        if (other.gameObject.tag == "Enemy" && a)
         {
             
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Invoke("Scene", 2f);
             enabled = false;
             Timetest.timercount = false;

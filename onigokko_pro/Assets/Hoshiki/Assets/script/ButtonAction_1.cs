@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class ButtonAction_1 : MonoBehaviour 
 {
-	[SerializeField]
-	Animator animator;
+    [SerializeField]
+    Animator animator;
 
 	static readonly int hashStatesyouji_close = Animator.StringToHash("syouji_close 0");
 
@@ -14,6 +14,7 @@ public class ButtonAction_1 : MonoBehaviour
 	{
 		animator.Play (hashStatesyouji_close);
 	}
+   
 
 
 }

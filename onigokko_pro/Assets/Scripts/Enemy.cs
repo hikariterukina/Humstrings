@@ -17,14 +17,20 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        transform.position += transform.forward * speed * Time.deltaTime * 2;
-
-        if (this.transform.position.y <= -3)
+        if (player.Posing == false)
         {
-            Destroy(gameObject);
-        }
+            this.gameObject.GetComponent<Animator>().enabled = true;
+            transform.position += transform.forward * speed * Time.deltaTime * 2;
 
+            if (this.transform.position.y <= -3)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            this.gameObject.GetComponent<Animator>().enabled = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
