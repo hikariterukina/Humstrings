@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour {
     internal bool interactable;
+    public AudioSource Ts;
 
     // Use this for initialization
     void Start () {
@@ -17,6 +18,12 @@ public class Button : MonoBehaviour {
 	}
     public void OnClick()
     {
+        Ts.Play();
+        Invoke("Scene", 0.5f);
+    }
+    void Scene()
+    {
+
         SceneManager.LoadScene("Title");
     }
 }

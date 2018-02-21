@@ -15,9 +15,14 @@ public class Result : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if (Voi == true)
+        if (Timetest.resultcount >= 120)
         {
-            float Voice = Random.Range(0, 3);
+            Voi = false;
+            Voicelose.Play();
+        }
+        if (Voi)
+        {
+            float Voice = Random.Range(0, 2);
             if (Voice == 0)
             {
                 Debug.Log("a");
@@ -34,11 +39,7 @@ public class Result : MonoBehaviour {
                 Voice3.Play();
             }
         }
-        if(Timetest.resultcount >= 120)
-        {
-            Voi = false;
-            Voicelose.Play();
-        }
+        
 
         resulttext = GetComponentInChildren<Text>();
         int M = (int)Timetest.resultcount/60;
