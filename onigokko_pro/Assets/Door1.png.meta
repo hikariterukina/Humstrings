@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: 730d608fe80f10b4ba39d6fc18dca727
-timeCreated: 1517983996
+guid: 36252910fe7f4d945a40058406a933d0
+timeCreated: 1519266483
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Door1_0
+    21300002: Door1_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -103,7 +105,35 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Door1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 319
+        height: 1136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Door1_1
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 0
+        width: 319
+        height: 1136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

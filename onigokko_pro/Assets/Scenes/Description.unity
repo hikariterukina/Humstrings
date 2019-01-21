@@ -588,7 +588,7 @@ RectTransform:
   m_GameObject: {fileID: 482277329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -7}
-  m_LocalScale: {x: 0.028011205, y: 0.028011205, z: 0.028011205}
+  m_LocalScale: {x: 0.025974026, y: 0.025974026, z: 0.025974026}
   m_Children:
   - {fileID: 1473134114}
   - {fileID: 76478022}
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 1255119828}
   - component: {fileID: 1255119827}
   m_Layer: 5
-  m_Name: "\u623B\u308B"
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

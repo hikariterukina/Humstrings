@@ -157,7 +157,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30BF\u30A4\u30C8\u30EB"
+  m_Text: "\u30BB\u30EC\u30AF\u30C8"
 --- !u!222 &222505215460005764
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -195,7 +195,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1381136733280092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98516846, y: -48.270004, z: 0}
+  m_LocalPosition: {x: 0, y: -48.270004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224205112266390810}
@@ -204,6 +204,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.98517, y: -48.27}
-  m_SizeDelta: {x: 202.97, y: 38.06}
+  m_AnchoredPosition: {x: 0, y: -48.27}
+  m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}

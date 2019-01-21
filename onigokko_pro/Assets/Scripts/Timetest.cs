@@ -63,6 +63,6 @@ public class Timetest : MonoBehaviour {
    
     void SceneM()
     {
-        SceneManager.LoadScene("Result");
+        SceneManager.LoadScene(6);
     }
 }

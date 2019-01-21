@@ -43,13 +43,11 @@ public class Enemy : MonoBehaviour {
             
             if (turn == 0)
             {
-                Debug.Log("0や！");
                 rotationY += 90f;
                 gameObject.transform.rotation = Quaternion.Euler(0,rotationY, 0);
             }
             else if(turn == 1)
             {
-                Debug.Log("１や！");
                 rotationY -= 90f;
                 gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
             }
@@ -58,19 +56,16 @@ public class Enemy : MonoBehaviour {
         {
             if (turn3 == 0)
             {
-                Debug.Log("0や！");
                 rotationY += 90f;
                 gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
             }
             else if (turn3 == 1)
             {
-                Debug.Log("１や！");
                 rotationY -= 90f;
                 gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
             }
             else if(turn3 == 2)
             {
-                Debug.Log("2や！");
                 rotationY += 0f;
                 gameObject.transform.rotation = Quaternion.Euler(0, rotationY, 0);
             }
@@ -91,14 +86,12 @@ public class Enemy : MonoBehaviour {
         else if(other.gameObject.tag == "EnemyR")
         {
             rotationY += 90f;
-            Debug.Log("あたってるよ");
             transform.rotation = Quaternion.Euler(0, rotationY, 0);
             
         }
         else if (other.gameObject.tag == "EnemyL")
         {
             rotationY -= 90f;
-            Debug.Log("あたってるよ");
             transform.rotation = Quaternion.Euler(0, rotationY, 0);
 
         }

@@ -77,9 +77,7 @@ public class player : MonoBehaviour {
             this.gameObject.GetComponent<Animator>().enabled = true;
             transform.position += transform.forward * speed * Time.deltaTime * 2;
             swipeDir = Vector2.zero; //１フレームごとにタッチをリセット
-#if !UNITY_EDITOR && (UNITY_ANDROID || UNITYIOS) //
-        if(Input.touchCount == 1) 
-#endif
+
             {
                 if (!pressing && Input.GetMouseButtonDown(0))
                 {
@@ -125,7 +123,7 @@ public class player : MonoBehaviour {
                                 if (swipeDir == Vector2.down)
                                 {
                                     Attack.Play();
-                                    Debug.Log("捕まえるんやで");
+                                    Debug.Log("捕まえる!");
                                     anim.SetTrigger("get");
                                     time = 0;
                                     c = false;
@@ -159,12 +157,7 @@ public class player : MonoBehaviour {
         {
             this.gameObject.GetComponent<Animator>().enabled = false;
         }
-#if !UNITY_EDITOR && (UNITY_ANDROID || UNITY_IOS)
-        else
-        {
-        pressing =false;
-        }
-#endif
+
         
 
 
@@ -191,7 +184,6 @@ public class player : MonoBehaviour {
 
 
             GameObject[] PTs = GameObject.FindGameObjectsWithTag("PT");
-            Debug.Log("やしが死んだよや！！");
             foreach (GameObject cube in PTs)
             {
              
@@ -231,9 +223,6 @@ public class player : MonoBehaviour {
             
         }
         
-
-
-
     }
     void OnTriggerEnter(Collider other)
     {

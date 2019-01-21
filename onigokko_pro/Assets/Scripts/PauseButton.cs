@@ -51,6 +51,6 @@ public class PauseButton : MonoBehaviour {
     }
     void Scene()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene(2);
     }
 }

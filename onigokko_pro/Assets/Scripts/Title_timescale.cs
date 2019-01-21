@@ -6,8 +6,7 @@ public class Title_timescale : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Time.timeScale = 1;
-		
+        Timetest.resultcount = 0;
 	}
 	
 	// Update is called once per frame
